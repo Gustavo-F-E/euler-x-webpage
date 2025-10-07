@@ -15,6 +15,9 @@ export default {
         code: ['monospace'],
       },
       colors: {
+        eulerblue: '#002E50',
+        eulertext: '#BFBFBF',
+        eulertext2: '#FFCD2F',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {

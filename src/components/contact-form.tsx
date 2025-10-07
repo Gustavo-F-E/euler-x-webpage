@@ -8,7 +8,6 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { useToast } from '@/hooks/use-toast';
-import { submitContactForm } from '@/app/actions';
 import { Card, CardContent } from '@/components/ui/card';
 
 const formSchema = z.object({
@@ -29,19 +28,36 @@ export function ContactForm() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    const result = await submitContactForm(values);
-
-    if (result.success) {
-      toast({
-        title: 'Message Sent!',
-        description: "We've received your message and will get back to you shortly.",
+    try {
+      const response = await fetch('https://formspree.io/f/mrbyapoe', { // <-- REEMPLAZA CON TU ID
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(values),
       });
-      form.reset();
-    } else {
+
+      if (response.ok) {
+        toast({
+          title: 'Message Sent!',
+          description: "We've received your message and will get back to you shortly.",
+        });
+        form.reset();
+      } else {
+        const data = await response.json();
+        const errorMessage = data.errors?.map((error: any) => error.message).join(', ') || 'There was a problem with your request.';
+        toast({
+          variant: 'destructive',
+          title: 'Uh oh! Something went wrong.',
+          description: errorMessage,
+        });
+      }
+    } catch (error) {
       toast({
         variant: 'destructive',
         title: 'Uh oh! Something went wrong.',
-        description: result.message || 'There was a problem with your request.',
+        description: 'An unexpected error occurred. Please try again.',
       });
     }
   }
@@ -84,13 +100,13 @@ export function ContactForm() {
                 <FormItem>
                   <FormLabel>Message</FormLabel>
                   <FormControl>
-                    <Textarea placeholder="How can we help you?" {...field} rows={5} />
+                    <Textarea placeholder="How can we help you?" {...field} rows={10} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90" disabled={form.formState.isSubmitting}>
+            <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 transition-transform hover:scale-y-105" disabled={form.formState.isSubmitting}>
               {form.formState.isSubmitting ? 'Sending...' : 'Send Message'}
             </Button>
           </form>
