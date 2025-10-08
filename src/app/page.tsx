@@ -3,6 +3,7 @@ import HeroSection from '@/components/sections/hero';
 import AboutSection from '@/components/sections/about';
 import ServicesSection from '@/components/sections/services';
 import NewsSection from '@/components/sections/news';
+import JobsSection from '@/components/sections/jobs';
 import ContactSection from '@/components/sections/contact';
 import Footer from '@/components/layout/footer';
 import { Suspense } from 'react';
@@ -17,8 +18,9 @@ export default function Home() {
         <AboutSection />
         <ServicesSection />
         <Suspense fallback={<NewsLoadingSkeleton />}>
-          <NewsSection />
+        <NewsSection />
         </Suspense>
+        <JobsSection />
         <ContactSection />
       </main>
       <Footer />

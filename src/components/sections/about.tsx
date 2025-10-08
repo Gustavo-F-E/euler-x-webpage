@@ -3,14 +3,14 @@ import Image from 'next/image';
 export default function AboutSection() {
   return (
     <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-card">
-      <div className="w-full px-4 md:px-6">
+      <div className="w-full px-4 md:px-6 max-w-7xl mx-auto">
           <div className="w-full space-y-4">
             <div className="w-full flex justify-center">
               <div className="inline-block rounded-lg bg-secondary px-6 py-3 text-2xl font-bold  mb-12">
                 About Us
               </div>
             </div>
-            <article id="about-mission" className="flex flex-col lg:flex-row w-full items-center h-max w-full">
+            <article id="about-mission" className="flex flex-col lg:flex-row w-full items-center h-max gap-12">
               <div className="w-full lg:w-1/2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-headline mb-12">
                   Forging the Future of Space Exploration
@@ -32,7 +32,7 @@ export default function AboutSection() {
                 />
               </div>
             </article>
-            <article id="about-expertise" className="flex flex-col lg:flex-row w-full items-center gap-6 h-max pt-48">
+            <article id="about-expertise" className="flex flex-col lg:flex-row w-full items-center gap-12 h-max pt-24">
               <div className="w-full lg:w-1/2 flex flex-col justify-center order-2 lg:order-1">
                 <Image
                   src="/images/aboutus1.png"
@@ -70,7 +70,7 @@ export default function AboutSection() {
               </div>
 
             </article>
-            <article id="about-clients" className="flex flex-col lg:flex-row w-full items-center gap-6 h-max pt-48">
+            <article id="about-clients" className="flex flex-col lg:flex-row w-full items-center gap-12 h-max pt-24">
               <div className="w-full lg:w-1/2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-headline mb-12">
                   Trusted by Industry Leaders
@@ -108,7 +108,7 @@ export default function AboutSection() {
                 />
               </div>
             </article>
-            <article id="about-founder" className="flex flex-col lg:flex-row w-full items-center gap-6 h-max pt-48">
+            <article id="about-founder" className="flex flex-col lg:flex-row w-full items-center gap-12 h-max pt-24">
               <div className="w-full lg:w-1/2 flex flex-col justify-center order-2 lg:order-1">
                     <div className="max-w-6xl mx-auto my-12 p-4">
                       
