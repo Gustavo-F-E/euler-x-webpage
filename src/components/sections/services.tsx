@@ -17,7 +17,7 @@ export default function ServicesSection() {
               {/* Servicio 1 */}
               <article id="service-consulting" className="flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-md border border-gray-200 transition-transform hover:-translate-y-2 hover:shadow-xl">
                 <Image
-                  src="/icons/consulting.svg"
+                  src="/icons/consulting-blue.svg"
                   alt="Consulting and NewSpace Expertise Icon"
                   width={40}
                   height={40}
@@ -32,7 +32,7 @@ export default function ServicesSection() {
               {/* Servicio 2 */}
               <article id="service-collaboration" className="flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-md border border-gray-200 transition-transform hover:-translate-y-2 hover:shadow-xl">
                 <Image
-                  src="/icons/networking2.svg"
+                  src="/icons/networking2-blue.svg"
                   alt="Consulting and NewSpace Expertise Icon"
                   width={40}
                   height={40}
@@ -52,7 +52,7 @@ export default function ServicesSection() {
               {/* Servicio 3 */}
               <article id="service-engineering-profiles" className="flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-md border border-gray-200 transition-transform hover:-translate-y-2 hover:shadow-xl">
                 <Image
-                  src="/icons/engineer-config-svgrepo-com.svg"
+                  src="/icons/engineer-config-svgrepo-com 1-blue.svg"
                   alt="Consulting and NewSpace Expertise Icon"
                   width={40}
                   height={40}
@@ -68,7 +68,7 @@ export default function ServicesSection() {
               {/* Servicio 4 */}
               <article id="service-thermal-mechanical" className="flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-md border border-gray-200 transition-transform hover:-translate-y-2 hover:shadow-xl">
                 <Image
-                  src="/icons/satellite-svgrepo-com.svg"
+                  src="/icons/satellite-svgrepo-com-blue.svg"
                   alt="Consulting and NewSpace Expertise Icon"
                   width={40}
                   height={40}

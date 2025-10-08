@@ -1,4 +1,16 @@
+"use client";
+
 import Image from 'next/image';
+import Link from 'next/link';
+
+const openPopup = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  e.preventDefault();
+  window.open(
+    e.currentTarget.href,
+    '_blank',
+    'noopener,noreferrer,width=500,height=400'
+  );
+};
 
 export default function AboutSection() {
   return (
@@ -85,27 +97,33 @@ export default function AboutSection() {
                   </ul>
               </div>
             <div className="w-full lg:w-1/2 flex flex-col justify-center order-2 lg:order-1">
-                <Image
-                  src="/images/redwire.png"
-                  alt="Redwire"
-                  width={543}
-                  height={160}
-                  className="mx-auto w-[50%] md:w-[40%]  lg:w-[40%] aspect-video overflow-hidden rounded-xl object-contain object-center transition-transform hover:-translate-y-2"
-                />
-                <Image
-                  src="/images/UKspace.png"
-                  alt="UK space agency"
-                  width={346}
-                  height={352}
-                  className="mx-auto w-[50%] md:w-[40%] lg:w-[40%] aspect-video overflow-hidden rounded-xl object-contain object-center transition-transform hover:-translate-y-2"
-                />
-                <Image
-                  src="/images/INVAP.png"
-                  alt="invap"
-                  width={366}
-                  height={66}
-                  className="mx-auto w-[40%] md:w-[30%]  lg:w-[30%] aspect-video overflow-hidden rounded-xl object-contain object-center transition-transform hover:-translate-y-2"
-                />
+                <Link href="https://redwirespace.com/" onClick={openPopup} rel="noopener noreferrer" className="mx-auto w-[50%] md:w-[40%] lg:w-[40%]">
+                  <Image
+                    src="/images/redwire.png"
+                    alt="Redwire"
+                    width={543}
+                    height={160}
+                    className="aspect-video overflow-hidden rounded-xl object-contain object-center transition-transform hover:-translate-y-2"
+                  />
+                </Link>
+                <Link href="https://www.gov.uk/government/organisations/uk-space-agency" onClick={openPopup} rel="noopener noreferrer" className="mx-auto w-[50%] md:w-[40%] lg:w-[40%]">
+                  <Image
+                    src="/images/UKspace.png"
+                    alt="UK space agency"
+                    width={346}
+                    height={352}
+                    className="aspect-video overflow-hidden rounded-xl object-contain object-center transition-transform hover:-translate-y-2"
+                  />
+                </Link>
+                <Link href="https://www.invap.com.ar/" onClick={openPopup} rel="noopener noreferrer" className="mx-auto w-[40%] md:w-[30%] lg:w-[30%]">
+                  <Image
+                    src="/images/INVAP.png"
+                    alt="invap"
+                    width={366}
+                    height={66}
+                    className="aspect-video overflow-hidden rounded-xl object-contain object-center transition-transform hover:-translate-y-2"
+                  />
+                </Link>
               </div>
             </article>
             <article id="about-founder" className="flex flex-col lg:flex-row w-full items-center gap-12 h-max pt-24">
@@ -130,48 +148,56 @@ export default function AboutSection() {
                       <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-10 p-4">
                         
                         {/* Logo 1: SAC-D/Aquarius */}
-                        <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-30 md:h-30 lg:w-37 lg:h-37 flex items-center justify-center p-1 shadow-2xl rounded-lg bg-white transition-transform hover:-translate-y-2">
-                          <Image
-                            src="/images/sacd-aquarius-logo.png"
-                            alt="SAC-D/Aquarius Satellite Logo"
-                            width={199}
-                            height={205}
-                            
-                          />
-                        </div>
+                        <Link href="https://www.argentina.gob.ar/ciencia/conae/misiones-espaciales/sac-d" onClick={openPopup} rel="noopener noreferrer">
+                          <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-30 md:h-30 lg:w-37 lg:h-37 flex items-center justify-center p-1 shadow-2xl rounded-lg bg-white transition-transform hover:-translate-y-2">
+                            <Image
+                              src="/images/sacd-aquarius-logo.png"
+                              alt="SAC-D/Aquarius Satellite Logo"
+                              width={199}
+                              height={205}
+                              
+                            />
+                          </div>
+                        </Link>
 
                         {/* Logo 2: ARSAT-1 */}
-                        <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-30 md:h-30 lg:w-37 lg:h-37 flex items-center justify-center p-1 shadow-2xl rounded-lg bg-white transition-transform hover:-translate-y-2">
-                          <Image
-                            src="/images/arsat-1-logo.png"
-                            alt="ARSAT-1 Satellite Logo"
-                            width={229}
-                            height={207}
-                            
-                          />
-                        </div>
+                        <Link href="https://www.argentina.gob.ar/jefatura/innovacion-publica/ssetic/conectar/el-arsat-1" onClick={openPopup} rel="noopener noreferrer">
+                          <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-30 md:h-30 lg:w-37 lg:h-37 flex items-center justify-center p-1 shadow-2xl rounded-lg bg-white transition-transform hover:-translate-y-2">
+                            <Image
+                              src="/images/arsat-1-logo.png"
+                              alt="ARSAT-1 Satellite Logo"
+                              width={229}
+                              height={207}
+                              
+                            />
+                          </div>
+                        </Link>
 
                         {/* Logo 3: ARSAT-2 */}
-                        <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-30 md:h-30 lg:w-37 lg:h-37 flex items-center justify-center p-1 shadow-2xl rounded-lg bg-white transition-transform hover:-translate-y-2">
-                          <Image
-                            src="/images/arsat-2-logo.png" 
-                            alt="ARSAT-2 Satellite Logo"
-                            width={222}
-                            height={204}
-                            
-                          />
-                        </div>
+                        <Link href="https://www.argentina.gob.ar/jefatura/innovacion-publica/ssetic/conectar/el-arsat-2" onClick={openPopup} rel="noopener noreferrer">
+                          <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-30 md:h-30 lg:w-37 lg:h-37 flex items-center justify-center p-1 shadow-2xl rounded-lg bg-white transition-transform hover:-translate-y-2">
+                            <Image
+                              src="/images/arsat-2-logo.png" 
+                              alt="ARSAT-2 Satellite Logo"
+                              width={222}
+                              height={204}
+                              
+                            />
+                          </div>
+                        </Link>
                         
                         {/* Logo 4: SAOCOM */}
-                        <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-30 md:h-30 lg:w-37 lg:h-37 flex items-center justify-center p-1 shadow-2xl rounded-lg bg-white transition-transform hover:-translate-y-2">
-                          <Image
-                            src="/images/saocom-logo.png"
-                            alt="SAOCOM Satellite Logo"
-                            width={209}
-                            height={208}
-                            
-                          />
-                        </div>
+                        <Link href="https://www.argentina.gob.ar/ciencia/conae/misiones-espaciales/saocom" onClick={openPopup} rel="noopener noreferrer">
+                          <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-30 md:h-30 lg:w-37 lg:h-37 flex items-center justify-center p-1 shadow-2xl rounded-lg bg-white transition-transform hover:-translate-y-2">
+                            <Image
+                              src="/images/saocom-logo.png"
+                              alt="SAOCOM Satellite Logo"
+                              width={209}
+                              height={208}
+                              
+                            />
+                          </div>
+                        </Link>
                       </div>
                     </div>
               </div>
